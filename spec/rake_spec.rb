@@ -29,8 +29,8 @@ describe "Rakefile" do
     end
   end
 
-  describe 'namespace :db' do
-    describe 'db:migrate' do
+  namespace :db do
+    desc 'db:migrate' do
       it "invokes the :environment task as a dependency" do
         expect(Rake::Task["db:migrate"].prerequisites).to include("environment")
       end
